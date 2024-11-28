@@ -116,7 +116,8 @@
         </a>
     </div>
     <p>Контактная информация</p>
-    <p>Социальные сети</п>
+    <p>Социальные сети</p>
+<li style="list-style: none;"><a href="AboutUS.html" class="AboutUS">О нас</a></li>
 </footer>
 <script src="scripts.js"></script>
 <div id="login-modal" class="modal">
@@ -180,4 +181,41 @@
 <script src="buttonscript.js"></script>
 <script src="scriptsVideo.js"></script>
 <script src="scripts.js"></script>
+    <script>
+function addVideo() {
+            const videoUrl = document.getElementById('videoUrl').value;
+            if (videoUrl) {
+                // Создаем новый элемент видео
+                const videoElement = document.createElement('video');
+                videoElement.src = videoUrl;
+                videoElement.controls = true;
+                videoElement.width = 600;
+
+                // Добавляем видео на страницу
+                document.getElementById('videoContainer').appendChild(videoElement);
+
+                // Открываем новое окно с добавленным видео
+                const newWindow = window.open('', '_blank');
+                newWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html lang="ru">
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Новое Видео</title>
+                    </head>
+                    <body>
+                        <h1>Добавленное Видео</h1>
+                        <video controls width="600">
+                            <source src="${videoUrl}" type="video/mp4">
+                            Ваш браузер не поддерживает видео.
+                        </video>
+                    </body>
+                    </html>
+                `);
+                newWindow.document.close();
+            } else {
+                alert('Пожалуйста, введите URL видео.');
+            }
+        }
+    </script>
 </html>
