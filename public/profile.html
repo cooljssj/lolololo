@@ -389,6 +389,72 @@
             alert('Ошибка при сохранении интересов');
         });
     });
+function removeInterest(interest) {
+ const index = interests.indexOf(interest);
+        if (index !== -1) {
+            interests.splice(index, 1);
+            document.getElementById('interestsInput').value = interests.join('\n');
+            const interestList = document.getElementById('interestList');
+            interestList.innerHTML = ''; 
+            interests.forEach(interest => {
+                const listItem = document.createElement('li');
+                listItem.textContent = interest;
+                const removeBtn = document.createElement('button');
+                removeBtn.textContent = '-';
+                removeBtn.addEventListener('click', () => {
+                    removeInterest(interest);
+                });
+                listItem.appendChild(removeBtn);
+                interestList.appendChild(listItem);
+            });
+        }
+    }
+
+    document.querySelector('.add-interest-btn').addEventListener('click', function() {
+        const interestsInput = document.getElementById('interestsInput');
+        const newInterest = interestsInput.value.trim();
+
+        if (newInterest) {
+            interests.push(newInterest);
+            interestsInput.value = '';
+            const interestList = document.getElementById('interestList');
+            const listItem = document.createElement('li');
+            listItem.textContent = newInterest;
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = '-';
+            removeBtn.addEventListener('click', () => {
+                removeInterest(newInterest);
+            });
+            listItem.appendChild(removeBtn);
+            interestList.appendChild(listItem);
+        } else {
+            alert('Введите интерес перед добавлением.');
+        }
+    });
+
+    document.querySelector('.save-interests-btn').addEventListener('click', function() {
+        const userId = getCookie('userId');
+
+        fetch(`/api/user/${userId}/interests`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ interests: interests.filter(Boolean) })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Интересы сохранены!');
+            } else {
+                alert('Не удалось сохранить интересы.');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при сохранении интересов:', error);
+            alert('Ошибка при сохранении интересов');
+        });
+    });
 </script>
 </body>
 </html>

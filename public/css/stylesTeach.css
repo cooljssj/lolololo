@@ -1,0 +1,65 @@
+ /* Добавьте этот стиль для центрирования модального окна */
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 500px; 
+    position: relative;
+    top: 50%; 
+    transform: translateY(-60%); 
+}
+
+.submit {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+    margin-top: 5px;
+}
+
+
+.submit:hover {
+    background-color: #45a049; 
+}
+
+
+input[type="text"] {
+
+    width: 100%; 
+    padding: 10px; 
+    margin: 8px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box;
+
+}
+
+
+textarea {
+
+    width: 100%; 
+    padding: 10px; 
+    margin: 8px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    resize: vertical;
+
+}

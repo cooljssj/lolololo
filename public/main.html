@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="css/Footer.css">
     <link rel="stylesheet" href="css/buttonStyle.css">
     <link rel="stylesheet" href="css/modals.css">
-	<link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylesTeach.css">
     <link rel="icon" href="img/Github-Octicons-Id-badge-16.512.png" type="image/png">
+    
 </head>
+
+<body>
     <header class="header">
         <div class="logo-container">
             <a href="main.html"><img src="img/logo.png" alt="Логотип" id="logo" style="width: 50px; height: 50px;"></a>
@@ -34,46 +38,65 @@
                     <input type="text" placeholder="Поиск по сайту">
                     <button class="search-btn">🔍</button>
                 </li>
-                </li>
                 <li class="hamburger-menu">
                     <button class="hamburger-btn">☰</button>
                     <div class="dropdown-content">
                         <a href="profile.html">Профиль</a>
                         <a href="#" class="settings-btn">Настройки</a>
                         <a href="#" class="contactUS-btn">Обратная связь</a>
-						<a href="Questions.html" class="contactUS-btn">FAQ</a>
+                        <a href="Questions.html" class="contactUS-btn">FAQ</a>
                     </div>
                 </li>
                 <li><a href="#" class="login-btn">Вход</a></li>
             </ul>
         </nav>
     </header>
+    
     <main>
         <section class="hero">
             <h1>Вступайте в ряды преподавателей <br> ресурса YouKnow</h1>
-            <button id="join-teachers">Подать заявку</button>
+            <button id="join-teachers" onclick="openApplicationModal()">Подать заявку</button>
         </section>
         <section class="content services">
             <h2>Новости и события YouKnow</h2>
-            
             <p>Здесь будут находится последние новости и события ресурса.</p>
-			<p>(В разработке).</p>
+            <p>(В разработке).</p>
         </section>
     </main>
+    
     <footer>
         <div class="social-links">
             <a href="https://telegram.org/" target="_blank">
                 <img class="Telegram" src="img/telegram.png" alt="Telegram">
             </a>
-            <a href="https://github.com/Cooljssj-ty" target="_blank">
+ <a href="https://github.com/Cooljssj-ty" target="_blank">
                 <img class="Github" src="img/github.png" alt="Github">
             </a>
         </div>
         <p>Контактная информация</p>
         <p>Социальные сети</p>
-            <li style="list-style: none;"><a href="AboutUS.html">О нас</a></li>
+        <li style="list-style: none;"><a href="AboutUS.html">О нас</a></li>
     </footer>
-    <script src="scripts.js"></script>
+
+    <div id="application-modal" class="modal" style="color: black;">
+        <div class="modal-content">
+            <span class="close-btn-application">&times;</span>
+            <h2>Подать заявку</h2>
+            <form id="application-form">
+				<label for="competence">Область компетенции:</label>    
+                <textarea id="competence" name="competence" required style="width: 100%; height: 100px;"></textarea><br/>
+			
+                <label for="publications">Научные публикации:</label>
+                <textarea id="publications" name="publications" required style="width: 100%; height: 100px;"></textarea><br/>
+				
+                <label for="experience">Опыт преподавания/исследовательской деятельности:</label>
+                <textarea id="experience" name="experience" required style="width: 100%; height: 100px;"></textarea><br/>
+
+                <button type="submit" class="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
     <div id="login-modal" class="modal" style="color: black;">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -88,27 +111,29 @@
             </form>
         </div>
     </div>
+    
     <div id="login-modal2" class="modal" style="color: black;">
         <div class="modal-content">
             <span class="close-btn2">&times;</span>
             <h2>Обратная связь</h2>
             <form>
                 <label for="name">Введите ваше имя:</label>
-                <input type="text" id="username" name="username"><br /> 
+                <input type="text" id="name" name="name"><br /> 
                 <label for="email">Введите ваш email:</label>
                 <input type="email" id="email" name="email" required><br /> 
                 <label for="message">Опишите проблему:</label><br /> 
-                <textarea></textarea><br />
-                <button type="submit" class="submit">Войти</button>
+                <textarea id="message" name="message" required style="width: 100%; height: 100px;"></textarea><br />
+                <button type="submit" class="submit">Отправить</button>
             </form>
         </div>
     </div>
+    
     <div id="login-modal3" class="modal" style="color: black;">
         <div class="modal-content">
             <span class="close-btn3">&times;</span>
             <h2>Настройки</h2>
             <form>
-                <label for="name">Выберите тему</label>
+                <label for="theme">Выберите тему</label>
                 <a href="#">
                     <label class="switch">
                         <input type="checkbox" id="dark-mode-toggle">
@@ -116,17 +141,9 @@
                     </label>
                 </a>
             </form>
-            <form>
-                <a href="#">
-                    <label class="switch">
-                        <input type="radio" id="">
-                        <span class=""></span>
-                    </label>
-                </a>
-            </form>
-        </div>
-    </div>
+            
+ 
+    <script src="TeacherScripts.js"></script>
     <script src="buttonscript.js"></script>
-	
-	
+</body>
 </html>
