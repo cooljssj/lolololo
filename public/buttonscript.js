@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
     const loginBtn = document.querySelector('.login-btn');
     const contactUsBtn = document.querySelector('.contactUS-btn');
     const settingsBtn = document.querySelector('.settings-btn');
@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('dark-mode');
         header.classList.add('dark-mode-header');
         toggle.checked = true;
+	document.getElementById("logo").src = "img/invertedLogo.png";
+
     }
 
     toggle.addEventListener('change', () => {
@@ -101,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.success) {
                 showNotification('Регистрация успешна!', 'success');
                 modal.style.display = 'none';
+ 		document.querySelector('.login-btn').style.display = 'none';
             } else {
                 showNotification(data.message || 'Ошибка регистрации.', 'error');
             }
@@ -130,9 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 showNotification('Вход успешен!', 'success');
                 modal.style.display = 'none';
                 localStorage.setItem('authToken', data.token);
-
-                // Remove login button after successful login
-                loginBtn.style.display = 'none';
+ 		document.querySelector('.login-btn').style.display = 'none';
+  		 window.location.href = 'profile.html';
             } else {
                 showNotification(data.message || 'Ошибка входа.', 'error');
             }

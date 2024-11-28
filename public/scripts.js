@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('dark-mode');
         header.classList.add('dark-mode-header');
         toggle.checked = true;
+	document.getElementById("logo").src = "img/invertedLogo.png";
     }
 
     toggle.addEventListener('change', () => {

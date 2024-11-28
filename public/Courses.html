@@ -12,43 +12,41 @@
     <link rel="stylesheet" href="css/stylesCourses.css">
     <link rel="icon" href="Github-Octicons-Id-badge-16.512.png" type="image/png">
 </head>
-<header class="header">
-    <div class="logo-container">
-        <a href="main.html">
-            <img src="img/logo.png" alt="Логотип" class="logo">
-        </a>
-        <a class="YouKnow" href="main.html">
-            <span>YouKnow</span>
-        </a>
-    </div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="Forum.html">Форум</a></li>
-            <li class="search-container">
-                <input type="text" placeholder="Поиск по сайту">
-                <button class="search-btn">🔍</button>
-            </li>
-            <li class="dropdown">
-                <button class="dropbtn">Активности</button>
-                <div class="dropdown-content">
-                    <a href="library/Library.html">Библиотека</a>
-                    <a href="Questions.html">Ответы на вопросы</a>
-                    <a href="Courses.html">Курсы</a>
-                    <a href="Video.html">Видеоуроки</a>
-                </div>
-            </li>
-            <li class="hamburger-menu">
-                <button class="hamburger-btn">☰</button>
-                <div class="dropdown-content">
-                    <a href="#">Профиль</a>
-                    <a href="#" class="settings-btn">Настройки</a>
-                    <a href="#" class="contactUS-btn">Обратная связь</a>
-                </div>
-            </li>
-            <li><a href="#" class="login-btn">Вход</a></li>
-        </ul>
-    </nav>
-</header>
+ <header class="header">
+        <div class="logo-container">
+            <a href="main.html"><img src="img/logo.png" alt="Логотип" id="logo" style="width: 50px; height: 50px;"></a>
+            <a class="YouKnow" href="main.html"><span>YouKnow</span></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Активности</button>
+                        <div class="dropdown-content">
+                            <a href="Library.html">Библиотека</a>
+                            <a href="Forum.html">Обсуждения</a>
+                            <a href="Courses.html">Курсы</a>
+                            <a href="Video.html">Видеоуроки</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="search-container">
+                    <input type="text" placeholder="Поиск по сайту">
+                    <button class="search-btn">🔍</button>
+                </li>
+                <li class="hamburger-menu">
+                    <button class="hamburger-btn">☰</button>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Профиль</a>
+                        <a href="#" class="settings-btn">Настройки</a>
+                        <a href="#" class="contactUS-btn">Обратная связь</a>
+                        <a href="Questions.html" class="contactUS-btn">FAQ</a>
+                    </div>
+                </li>
+                <li><a href="#" class="login-btn">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
 
 <body>
 <title>
@@ -184,5 +182,5 @@
     </div>
 </div>
 <script src="buttonscript.js"></script>
-
+<script src="scripts.js"></script>
 </html>
