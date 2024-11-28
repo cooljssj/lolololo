@@ -63,7 +63,7 @@
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: calc(100% - 20px);
+    width: 190px;
     display: block;
 }
 
@@ -74,6 +74,13 @@
     padding: 10px;
     text-align: center;
 
+}
+
+#file-upload-form{
+    background-color: #111;
+    display: flex;
+    justify-content: space-evenly;
+    
 }
 
 #file-upload-form button {
@@ -143,7 +150,7 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.slide {
+.slider {
     min-width: 100%;
     text-align: center;
     padding: 2рем;
@@ -203,22 +210,12 @@ footer {
     transition: background-color 0.3s, color 0.3s;
 }
 
-body.dark-mode {
+body.dark-mode .library-content{
     background-color: #121212;
-    color: #ffffff;
 }
-
-body.dark-mode .header,
-body.dark-mode .library-hero,
-body.dark-mode .latest-documents,
-body.dark-mode .library-content,
-body.dark-mode footer {
-    background-color: #1e1e1e;
-    color: #ffffff;
-}
-body.dark-mode .library-hero,{
+body.dark-mode .library-hero{
     background-color: 1cd3a2;
-    color: #00000;
+    color: #000000;
 }
 .dark-mode .library-content h2 {
     color: white; 

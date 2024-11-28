@@ -32,6 +32,36 @@ body.dark-mode header {
     display: flex;
     align-items: center;
 }
+@media (max-width: 785px) {
+    .hamburger-menu {
+        display: block; 
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    body.dark-mode .nav-links {
+        background-color: #2c2c2c;
+    }
+}
 
 .logo-container .logo {
     width: 50px;
@@ -358,17 +388,4 @@ body.dark-mode .hero h1 {
 
 body.dark-mode .hero button {
     background-color: #668f1b;
-}
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
-    .nav-links .search-container input {
-        width: 100%;
-    }
-
-    .hamburger-btn {
-        font-size: 1.2rem;
-    }
 }

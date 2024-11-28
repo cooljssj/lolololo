@@ -1,14 +1,14 @@
- /* Добавьте этот стиль для центрирования модального окна */
- .modal {
+
+.modal {
     display: none;
     position: fixed;
-    z-index: 1000; 
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -16,50 +16,76 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 500px; 
+    width: 500px;
     position: relative;
-    top: 50%; 
-    transform: translateY(-60%); 
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
 }
 
+
 .submit {
-    background-color: #4CAF50; 
-    color: white; 
-    padding: 10px 15px; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    transition: background-color 0.3s; 
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
     margin-top: 5px;
 }
 
-
 .submit:hover {
-    background-color: #45a049; 
+    background-color: #45a049;
 }
 
 
-input[type="text"] {
-
-    width: 100%; 
-    padding: 10px; 
-    margin: 8px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     box-sizing: border-box;
-
 }
 
 
 textarea {
-
-    width: 100%; 
-    padding: 10px; 
-    margin: 8px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
     resize: vertical;
+}
 
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; 
+        padding: 15px;
+    }
+
+    .submit {
+        font-size: 14px; 
+    }
+
+    input[type="text"],
+    textarea {
+        padding: 12px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%; 
+        padding: 10px;
+    }
+
+    .submit {
+        font-size: 14px;
+        padding: 8px 12px; 
+    }
+
+    input[type="text"],
+    textarea {
+        padding: 12px; 
+        margin: 6px 0; 
+    }
 }

@@ -12,7 +12,6 @@
 
 .nav-links .login-btn:hover {
     background-color: #45a049;
-    /* Цвет при наведении */
 }
 
 .modal {
@@ -214,7 +213,7 @@ body.dark-mode .nav-links li .dropdown-content a:hover {
 #password:focus {
     border-color: #28a745;
     outline: none;
-    background-color: #fff; /* Цвет фона при фокусе */
+    background-color: #fff; 
 }
 
 .submit {

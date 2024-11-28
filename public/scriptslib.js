@@ -75,18 +75,31 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Ошибка при загрузке файлов:', error);
     }
 
-    const searchInput = document.getElementById('search-input');
-    const searchBtn = document.getElementById('search-btn');
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-btn');
 
-    searchBtn.addEventListener('click', () => {
-        const query = searchInput.value.toLowerCase();
-        const fileItems = document.querySelectorAll('.file-item');
-        
-        fileItems.forEach(item => {
-            const text = item.textContent.toLowerCase();
-            item.style.display = text.includes(query) ? 'block' : 'none';
-        });
+searchBtn.addEventListener('click', () => {
+    const query = searchInput.value.toLowerCase();
+    const fileItems = document.querySelectorAll('.file-item');
+
+    let found = false;
+
+    fileItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+            item.style.display = 'block';
+            found = true;
+        } else {
+            item.style.display = 'none';
+        }
     });
+
+    if (!found) {
+        fileItems.forEach(item => item.style.display = 'block'); // Показываем все элементы
+        alert('Ничего не найдено'); // Уведомление
+    }
+});
+
 document.getElementById('dark-mode-toggle').addEventListener('change', (event) => {
             document.body.classList.toggle('dark-mode', event.target.checked);
         });

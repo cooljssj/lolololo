@@ -1,83 +1,214 @@
 body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e0f7e0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-            background-color: #e0f7e0;
-            border-radius: 5px;
-        }
-        .video-upload {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .video-upload h2 {
-            margin-top: 0;
-        }
-        .video-upload input[type="text"],
-        .video-upload textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .video-upload button {
-            background-color: #28a745; 
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .video-upload button:hover {
-            background-color: #218838;
-        }
-        .video-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .video-item {
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: calc(33.333% - 20px);
-        }
-        .video-item video {
-            width: 100%;
-            height: 200px; 
-        }
-        .video-item .video-info {
-            padding: 15px;
-        }
-        .video-item .video-info h3 {
-            margin: 0 0 10px;
-        }
-        .video-item .video-info p {
-            margin: 0 0 10px;
-            color: #666;
-        }
-        .video-item .video-info .video-actions {
-            display: flex;
-            justify-content: space-between;
-        }
-        .video-item .video-info .video-actions button {
-            background-color: #28a745; 
-            color: #fff;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .video-item .video-info .video-actions button:hover {
-            background-color: #218838;
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7e0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #111;
+    border-radius: 5px;
+}
+
+.video-upload {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.dark-mode .video-upload {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.video-upload h2 {
+    margin-top: 0;
+}
+
+.dark-mode .video-upload h2 {
+    color: #fff;
+}
+
+.video-upload input[type="text"],
+.video-upload textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dark-mode .video-upload input[type="text"],
+.dark-mode .video-upload textarea {
+    background-color: #9594943c;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+/* Video upload button */
+.video-upload button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.video-upload button:hover {
+    background-color: #218838;
+}
+
+.video-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video-item {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+}
+
+.dark-mode .video-item {
+    background-color: #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+}
+
+.video-item video {
+    width: 100%;
+    height: 200px;
+}
+
+.video-item .video-info {
+    padding: 15px;
+}
+
+.video-item .video-info h3 {
+    margin: 0 0 10px;
+}
+
+.video-item .video-info p {
+    margin: 0 0 10px;
+    color: #666;
+}
+
+.dark-mode .video-item .video-info p {
+    margin: 0 0 10px;
+    color: #cbcbcb;
+}
+
+.video-item .video-info .video-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-item .video-info .video-actions button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-mode .video-item .video-info .video-actions button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.video-item .video-info .video-actions button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .video-item {
+        width: calc(50% - 20px); 
+    }
+
+    .video-upload input[type="text"],
+    .video-upload textarea {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .video-upload button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .video-item {
+        width: 100%; 
+    }
+
+    .video-upload input[type="text"],
+    .video-upload textarea {
+        padding: 8px;
+    }
+
+    .video-upload button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .video-item .video-info h3 {
+        font-size: 16px;
+    }
+
+    .video-item .video-info p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        padding: 10px;
+    }
+
+    .video-upload input[type="text"],
+    .video-upload textarea {
+        padding: 6px;
+    }
+
+    .video-upload button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .video-item .video-info h3 {
+        font-size: 14px;
+    }
+
+    .video-item .video-info p {
+        font-size: 

@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('dark-mode');
         header.classList.add('dark-mode-header');
         toggle.checked = true;
-	document.getElementById("logo").src = "img/invertedLogo.png";
+	    document.getElementById("logo").src = "img/invertedLogo.png";
+        document.getElementById("Telegram").src = "img/invertedTel.png";
+        document.getElementById("Github").src = "img/invertedGit.png";
     }
 
     toggle.addEventListener('change', () => {
@@ -26,11 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.add('dark-mode-header');
             localStorage.setItem('dark-mode', 'enabled');
             document.getElementById("logo").src = "img/invertedLogo.png";
+            document.getElementById("Telegram").src = "img/invertedTel.png";
+            document.getElementById("Github").src = "img/invertedGit.png";
         } else {
             body.classList.remove('dark-mode');
             header.classList.remove('dark-mode-header');
             localStorage.setItem('dark-mode', 'disabled');
             document.getElementById("logo").src = "img/logo.png";
+            document.getElementById("Telegram").src = "img/telegram.png";
+            document.getElementById("Github").src = "img/github.png";
         }
     });
 

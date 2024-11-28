@@ -33,10 +33,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="search-container">
-                    <input type="text" placeholder="Поиск по сайту">
-                    <button class="search-btn">🔍</button>
-                </li>
+
                 <li class="hamburger-menu">
                     <button class="hamburger-btn">☰</button>
                     <div class="dropdown-content">
@@ -52,14 +49,14 @@
     </header>
 
     <div class="container">
-        <h1>Форум обсуждений</h1>
+        <h1>Форум</h1>
         <p>Присоединяйтесь к обсуждениям и делитесь своим мнением!</p>
         
         <button class="new-thread-button">Начать обсуждение</button>
         
-        <div class="search-bar">
-            <input type="text" placeholder="Поиск по форуму...">
-            <button><i class="fas fa-search"></i></button>
+         <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Поиск по форуму...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
         </div>
         
         <div class="thread">
@@ -77,20 +74,28 @@
             <p>Какие книги вы считаете наиболее полезными для личностного роста и саморазвития? Поделитесь своими рекомендациями и впечатлениями от прочитанного.</p>
             <button>Вступить в обсуждение</button>
         </div>
+
+        <div class="thread searchable">
+            <h2>Как сделать себя лучше</h2>
+            <p class="meta">Автор: Виталий Макаров | Дата: 03.10.2023</p>
+            <p class="topic">Тема: Саморазвитие</p>
+            <p>Поделитесь своим мнением, очень интересно узнать ваше мнение по этому поводу</p>
+            <button>Вступить в обсуждение</button>
+        </div>
     </div>
 
     <footer>
         <div class="social-links">
             <a href="https://telegram.org/" target="_blank">
-                <img class="Telegram" src="img/telegram.png" alt="Telegram">
+                <img id="Telegram" src="img/telegram.png" alt="Telegram">
             </a>
             <a href="https://github.com/Cooljssj-ty" target="_blank">
-                <img class="Github" src="img/github.png" alt="Github">
+                <img id="Github" src="img/github.png" alt="Github">
             </a>
         </div>
         <p>Контактная информация</p>
         <p>Социальные сети</p>	
-<li style="list-style: none;"><a href="AboutUS.html" class="AboutUS">О нас</a></li>
+        <li style="list-style: none;"><a href="AboutUS.html" class="AboutUS">О нас</a></li>
     </footer>
 
     <div id="login-modal" class="modal">
@@ -102,6 +107,7 @@
                 <input type="text" id="username" name="username" required>
                 <label for="password">Пароль:</label>
                 <input type="password" id="password" name="password" required>
+                <a class="registerbutton" href="RegistrationForm.html">Создать аккаунт</a><br /><br />
                 <button type="submit" class="submit">Войти</button>
             </form>
         </div>
@@ -139,6 +145,7 @@
 
     <script src="scripts.js"></script>
     <script src="buttonscript.js"></script>
+    <script src="Forumsearch.js"></script>
 </body>
 
 </html>

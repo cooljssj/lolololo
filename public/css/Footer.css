@@ -9,7 +9,7 @@ footer {
 }
 
 body.dark-mode footer {
-    background-color: #1e1e1e;
+    background-color: #000000;
     color: #e0e0e0;
 }
 
@@ -25,4 +25,64 @@ footer .social-links a {
 footer .social-links img {
     width: 24px;
     height: 24px;
+}
+
+.AboutUS {
+    text-decoration: none;
+    color: #000000;
+}
+
+body.dark-mode .AboutUS {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 1.5rem;
+    }
+
+    footer .social-links {
+        margin-bottom: 1rem;
+    }
+
+    footer .social-links a {
+        margin: 0 0.5rem;
+    }
+
+    footer .social-links img {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer .AboutUS {
+        display: block;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 1rem;
+    }
+
+    footer .social-links {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    footer .social-links a {
+        margin: 0 0.5rem;
+    }
+
+    footer .social-links img {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer .AboutUS {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
 }

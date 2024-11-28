@@ -31,7 +31,7 @@
 }
 
 body.dark-mode .faq-item .links {
-    color: antiquewhite;
+    color: rgb(174, 207, 255);
 }
 
 body.dark-mode .faq-item summary {
@@ -48,7 +48,39 @@ body.dark-mode .faq-item summary:hover {
 
 body.dark-mode .faq-item p {
     padding: 1rem;
-    background-color: #000000;
+    background-color: #0b0b0b;
     border: 1px solid #dddddd;
     margin-top: -1px;
+}
+
+@media (max-width: 768px) {
+    #faq {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .faq-item summary {
+        font-size: 1.1rem;
+    }
+
+    .faq-item p {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #faq {
+        padding: 0 0.5rem;
+    }
+
+    .faq-item summary {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .faq-item p {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
 }

@@ -10,172 +10,6 @@
     <link rel="stylesheet" href="css/buttonStyle.css">
     <link rel="stylesheet" href="css/modals.css">
     <link rel="icon" href="img/Github-Octicons-Id-badge-16.512.png" type="image/png">
-    <style>
-        .container {
-            width: 900px; 
-            height: auto;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-left: 5px solid #28a745;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            text-align: left;
-            color: #333;
-        }
-
-        #profile {
-            margin-top: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start; /* Смещаем содержимое влево */
-        }
-
-        .profile-pic {
-            width: 175px; 
-            height: 175px; 
-            border-radius: 50%; 
-            object-fit: cover; 
-            margin-right: 15px; 
-        }
-
-        .profile-info {
-            margin-left: 15px; /* Отступ между фото и данными */
-        }
-
-        p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-
-        strong {
-            color: #555;
-        }
-
-        .upload-btn {
-            background-color: #4CAF50; /* Зеленый фон */
-            color: white; /* Цвет текста */
-            padding: 5px 15px; /* Отступы */
-            border: none; /* Убираем рамку */
-            border-radius: 5px; /* Закругленные углы */
-            cursor: pointer; /* Указатель при наведении */
-            margin-left: 40px; /* Отступ слева от фото */
-            margin-top: 10px;
-            height: 20px;
-            width: 170px;
-        }
-
-        .upload-btn:hover {
-            background-color: #45a049; /* Цвет при наведении */
-        }
-
-        textarea {
-            width: 640px; /* Ширина текстового поля */
-            height: 120px;
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            resize: none; /* Запрещаем изменение размера текстового поля */
-        }
-
-        select {
-            margin-top: 10px;
-            padding: 5px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .achievements {
-            margin-top: 20px; 
-        }
-
-        .achievement-input {
-            width: 100%;
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        footer {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .social-links img {
-            width: 30px;
-            margin: 0 10px;
-        }
-
-        .save-bio-btn {
-            background-color: #4CAF50; 
-            color: white; 
-            padding: 5px 15px; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            margin-top: 10px; 
-            height: 35px; 
-            width: 130px; 
-            font-size: 12px; 
-        }
-
-        .save-bio-btn:hover {
-            background-color: #45a049; 
-        }
-
-        #interestsInput {
-            width: 100%; 
-            height: 40px; 
-            padding: 10px; 
-            border: 1px solid #ddd; 
-            border-radius: 5px; 
-            resize: none; 
-        }
-
-        .add-interest-btn, .save-interests-btn {
- background-color: #4CAF50; 
-            color: white; 
-            border: none; 
-            padding: 10px 15px; 
-            text-align: center; 
-            text-decoration: none; 
-            display: inline-block; 
-            font-size: 12px; 
-            margin: 5px 2px; 
-            cursor: pointer; 
-            border-radius: 5px; 
-            transition: background-color 0.3s; 
-        }
-
-        .add-interest-btn:hover, .save-interests-btn:hover {
-            background-color: #45a049; 
-        }
-
-        @media (max-width: 900px) {
-            .container {
-                width: 90%;
-                padding: 15px;
-            }
-
-            p {
-                font-size: 14px;
-            }
-
-            .profile-pic {
-                width: 170px; 
-                height: 170px;
-            }
-        }    
-    </style>
 </head>
 <body>
 <header class="header">
@@ -215,7 +49,7 @@
 </header>
 
 <div class="container">
-    <h2>Ваш профиль</h2>
+    <h3>Ваш профиль</h3>
     <div id="profile" style="position: relative;">
         <label for="fileInput">
             <img src="img/DefaultPFP.png" alt="Фото профиля отсутствует" class="profile-pic" id="profileImage"> 
@@ -268,7 +102,7 @@
                 <label for="email">Введите ваш email:</label>
                 <input type="email" id="email" name="email" required><br /> 
                 <label for="message">Опишите проблему:</label><br /> 
-                <textarea id="message" name="message" required style="width: 100%; height: 100px;"></textarea><br />
+                <textarea id="message" name="message" required style="width: 100%; height: 100px; background-color: #fff;"></textarea><br />
                 <button type="submit" class="submit">Отправить</button>
             </form>
         </div>
@@ -278,7 +112,7 @@
             <span class="close-btn3">&times;</span>
             <h2>Настройки</h2>
             <form>
-                <label for="name">Выберите тему</label>
+                <label for="theme">Выберите тему</label>
                 <a href="#">
                     <label class="switch">
                         <input type="checkbox" id="dark-mode-toggle">
@@ -286,30 +120,22 @@
                     </label>
                 </a>
             </form>
-            <form>
-                <a href="#">
-                    <label class="switch">
-                        <input type="radio" id="">
-                        <span class=""></span>
-                    </label>
-                </a>
-            </form>
-        </div>
+        </div>  
     </div>
 
 
 <footer>
     <div class="social-links">
         <a href="https:// telegram.org/" target="_blank">
-            <img class="Telegram" src="img/telegram.png" alt="Telegram">
+            <img id="Telegram" src="img/telegram.png" alt="Telegram">
         </a>
         <a href="https://github.com/Cooljssj-ty" target="_blank">
-            <img class="Github" src="img/github.png" alt="Github">
+            <img id="Github" src="img/github.png" alt="Github">
         </a>
     </div>
     <p>Контактная информация</p>
     <p>Социальные сети</p>
-    <li style="list-style: none;"><a href="AboutUS.html">О нас</a></li>
+    <li style="list-style: none;"><a href="AboutUS.html" class="AboutUS">О нас</a></li>
 </footer>
 
 <script src="buttonscript.js"></script>

@@ -10,7 +10,7 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
-.container.dark-mode {
+.dark-mode .container {
     background-color: #1e1e1e;
 }
 
@@ -18,36 +18,36 @@ h1.dark-mode, h2.dark-mode, p.dark-mode {
     color: #e0e0e0;
 }
 
-.post.dark-mode, .thread.dark-mode {
+.dark-mode .post, .dark-mode .thread {
     background-color: #2c2c2c;
     border: 1px solid #444;
 }
 
-.post .topic.dark-mode, .thread .topic.dark-mode {
+.dark-mode .post .topic, .dark-mode .thread .topic {
     background-color: rgba(76, 175, 80, 0.2);
-    color: #000;
+    color: #000000;
 }
 
-.search-bar.dark-mode input[type="text"] {
+.dark-mode .search-bar input[type="text"] {
     background-color: #333;
     color: #ffffff;
     border: 1px solid #444;
 }
 
-.search-bar.dark-mode button {
+.dark-mode .search-bar button {
     background-color: #9c27b0;
     color: white;
 }
 
-.search-bar.dark-mode button:hover {
+.dark-mode .search-bar button:hover {
     background-color: #8e24aa;
 }
 
-.new-thread-button.dark-mode {
+.dark-mode .new-thread-button {
     background-color: #009688;
 }
 
-.new-thread-button.dark-mode:hover {
+.dark-mode:hover .new-thread-button {
     background-color: #00796b;
 }
 
@@ -181,13 +181,14 @@ h2 {
     padding: 10px;
     font-size: 1em;
     cursor: pointer;
-    background-color: #2196F3;
+    background-color: #66BB6A;
     color: white;
-    border: none border-radius: 5px;
+    border: none;
+    border-radius: 5px;
 }
 
 .search-bar button:hover {
-    background-color: #1976D2;
+    background-color: #4CAF50;
 }
 
 .new-thread-button {
@@ -206,4 +207,72 @@ h2 {
 
 .new-thread-button:hover {
     background-color: #4CAF50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .post, .thread {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-bar button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .new-thread-button {
+        width: 100%;
+        padding: 12px 10px;
+    }
+
+    .post button, .thread button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .post, .thread {
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+
+    .post button, .thread button, .new-thread-button {
+        padding: 10px;
+        font-size: 1em;
+    }
 }
