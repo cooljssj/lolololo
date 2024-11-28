@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.remove('dark-mode');
             header.classList.remove('dark-mode-header');
             localStorage.setItem('dark-mode', 'disabled');
-            document.getElementById("logo").src = "img/logo.jpg";
+            document.getElementById("logo").src = "img/logo.png";
         }
     });
 
