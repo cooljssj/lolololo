@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="css/Header.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/buttonStyle.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/stylesforum.css">
+    <link rel="icon" href="Github-Octicons-Id-badge-16.512.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="main.html">
+                <img src="img/logo.jpg" alt="Логотип" class="logo">
+            </a>
+            <a class="YouKnow" href="main.html">
+                <span>YouKnow</span>
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Активности</button>
+                        <div class="dropdown-content">
+                            <a href="Library.html">Библиотека</a>
+                            <a href="Forum.html">Обсуждения</a>
+                            <a href="Courses.html">Курсы</a>
+                            <a href="Video.html">Видеоуроки</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="search-container">
+                    <input type="text" placeholder="Поиск по сайту">
+                    <button class="search-btn">🔍</button>
+                </li>
+                <li class="hamburger-menu">
+                    <button class="hamburger-btn">☰</button>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Профиль</a>
+                        <a href="#" class="settings-btn">Настройки</a>
+                        <a href="#" class="contactUS-btn">Обратная связь</a>
+                    </div>
+                </li>
+                <li><a href="#" class="login-btn">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Форум обсуждений</h1>
+        <p>Присоединяйтесь к обсуждениям и делитесь своим мнением!</p>
+        
+        <button class="new-thread-button">Начать обсуждение</button>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск по форуму...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="thread">
+            <h2>Как улучшить продуктивность на работе?</h2>
+            <p class="meta">Автор: Иван Иванов | Дата: 01.10.2023</p>
+            <p class="topic">Тема: Продуктивность</p>
+            <p>Давайте обсудим различные методы и техники, которые помогают повысить продуктивность на рабочем месте. Поделитесь своими советами и опытом!</p>
+            <button>Вступить в обсуждение</button>
+        </div>
+        
+        <div class="thread">
+            <h2>Лучшие книги для саморазвития</h2>
+            <p class="meta">Автор: Мария Петрова | Дата: 02.10.2023</p>
+            <p class="topic">Тема: Саморазвитие</p>
+            <p>Какие книги вы считаете наиболее полезными для личностного роста и саморазвития? Поделитесь своими рекомендациями и впечатлениями от прочитанного.</p>
+            <button>Вступить в обсуждение</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://telegram.org/" target="_blank">
+                <img class="Telegram" src="img/telegram.png" alt="Telegram">
+            </a>
+            <a href="https://github.com/Cooljssj-ty" target="_blank">
+                <img class="Github" src="img/github.png" alt="Github">
+            </a>
+        </div>
+        <p>Контактная информация</p>
+        <p>Социальные сети</p>	
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Вход</h2>
+            <form>
+                <label for="username">Логин:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="login-modal2" class="modal" style="color: black;">
+        <div class="modal-content">
+            <span class="close-btn2">&times;</span>
+            <h2>Обратная связь</h2>
+            <form>
+                <label for="name">Введите ваше имя:</label>
+                <input type="text" id="username" name="username">
+                <label for="email">Введите ваш email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Опишите проблему:</label>
+                <input type="text" id="message" name="message" required>
+                <button type="submit" class="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="login-modal3" class="modal" style="color: black;">
+        <div class="modal-content">
+            <span class="close-btn3">&times;</span>
+            <h2>Настройки</h2>
+            <form>
+                <label for="theme">Выберите тему:</label>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="buttonscript.js"></script>
+</body>
+
+</html>

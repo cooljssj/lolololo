@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="css/stylesReg.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Регистрация в YouKnow</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="usname">Логин:</label>
+                <input type="text" id="usname" name="usname" required>
+            </div>
+            <div class="form-group">
+                <label for="firstname">Имя:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Подтвердите пароль:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+            const usname = document.getElementById('usname').value;
+            const firstname = document.getElementById('firstname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Проверяем совпадение паролей
+            if (password !== confirmPassword) {
+                alert('Пароли не совпадают!');
+                return;
+            }
+            // Проверяем минимальную длину пароля
+            if (password.length < 6) {
+                alert('Пароль должен содержать минимум 6 символов!');
+                return;
+            }
+
+            // Отправляем данные на сервер через fetch
+            fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ usname, firstname, email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Регистрация успешна');
+                    window.location.href = 'profile.html'; // Перенаправление после успешной регистрации
+                } else {
+                    alert(data.message); // Покажем сообщение об ошибке
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка регистрации:', error);
+                alert('Ошибка регистрации');
+            });
+        });
+    </script>
+</body>
+
+</html>

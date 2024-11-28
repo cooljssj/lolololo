@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="css/Header.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/buttonStyle.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/stylesUS.css">
+    <link rel="icon" href="Github-Octicons-Id-badge-16.512.png" type="image/png">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="main.html">
+                <img src="img/logo.jpg" alt="Логотип" class="logo">
+            </a>
+            <a class="YouKnow" href="main.html">
+                <span>YouKnow</span>
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Активности</button>
+                        <div class="dropdown-content">
+                            <a href="Library.html">Библиотека</a>
+                            <a href="Forum.html">Обсуждения</a>
+                            <a href="Courses.html">Курсы</a>
+                            <a href="Video.html">Видеоуроки</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="search-container">
+                    <input type="text" placeholder="Поиск по сайту">
+                    <button class="search-btn">🔍</button>
+                </li>
+                <li class="hamburger-menu">
+                    <button class="hamburger-btn">☰</button>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Профиль</a>
+                        <a href="#" class="settings-btn">Настройки</a>
+                        <a href="#" class="contactUS-btn">Обратная связь</a>
+                        <a href="Questions.html">FAQ</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="login-btn">Вход</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Добро пожаловать в YouKnow!</h1>
+            <p>Здесь вы найдёте всё необходимое для обучения и взаимодействия с единомышленниками.</p>
+            <h2>О разработчиках</h2>
+            <p>Мы - команда Ctrl-c Ctrl-v, основанная в 2024 году и состоящая из 4 студентов-инженеров. Хакатон посетили с целью узнать что-то новое, бросить самим себе вызов и познакомиться с интересными людьми. Будем рады плодотворному общению и любым конструктивным замечаниям и критике.</p>
+            <p>Благодарим за внимание.</p>
+            <h2>Наши цели</h2>
+            <p>Наша цель - создать платформу, которая поможет людям обмениваться знаниями и опытом. Мы стремимся к тому, чтобы каждый пользователь мог найти здесь что-то полезное для себя.</p>
+            <h2>Контакты</h2>
+            <p>Если у вас есть вопросы или предложения, вы можете связаться с нами в Telegram. Мы всегда рады новым идеям и предложениям.</p>
+            <h2>Отзывы</h2>
+            <p>Мы ценим ваши отзывы и предложения. Пожалуйста, оставляйте свои комментарии и делитесь своим опытом использования нашей платформы. Это поможет нам стать лучше и полезнее для вас.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://telegram.org/" target="_blank">
+                <img class="Telegram" src="img/telegram.png" alt="Telegram">
+            </a>
+            <a href="https://github.com/Cooljssj-ty" target="_blank">
+                <img class="Github" src="img/github.png" alt="Github">
+            </a>
+        </div>
+        <p>Контактная информация</p>
+        <p>Социальные сети</p>
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Вход</h2>
+            <form>
+                <label for="username">Логин:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="login-modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn2">&times;</span>
+            <h2>Обратная связь</h2>
+            <form>
+                <label for="name">Введите ваше имя:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Введите ваш email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Опишите проблему:</label>
+                <input type="text" id="message" name="message" required>
+                <button type="submit" class="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="login-modal3" class="modal">
+        <div class="modal-content">
+            <span class="close-btn3">&times;</span>
+            <h2>Настройки</h2>
+            <form>
+                <label for="theme">Выберите тему:</label>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="buttonscript.js"></script>
+</body>
+
+</html>

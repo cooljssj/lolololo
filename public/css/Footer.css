@@ -1,0 +1,28 @@
+footer {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #e6e6e6;
+    position: relative;
+    bottom: 0;
+}
+
+body.dark-mode footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+footer .social-links {
+    margin-bottom: 1rem;
+}
+
+footer .social-links a {
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+footer .social-links img {
+    width: 24px;
+    height: 24px;
+}

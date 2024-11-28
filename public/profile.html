@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="css/ProfileStyles.css">
+    <link rel="stylesheet" href="css/Header.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/buttonStyle.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="icon" href="img/Github-Octicons-Id-badge-16.512.png" type="image/png">
+    <style>
+        .container {
+            width: 900px; /* Увеличиваем ширину контейнера */
+            height: auto;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-left: 5px solid #28a745;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: left;
+            color: #333;
+        }
+
+        #profile {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Смещаем содержимое влево */
+        }
+
+        .profile-pic {
+            width: 175px; 
+            height: 175px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            margin-right: 15px; 
+        }
+
+        .profile-info {
+            margin-left: 15px; /* Отступ между фото и данными */
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        strong {
+            color: #555;
+        }
+
+        .upload-btn {
+            background-color: #4CAF50; /* Зеленый фон */
+            color: white; /* Цвет текста */
+            padding: 5px 15px; /* Отступы */
+            border: none; /* Убираем рамку */
+            border-radius: 5px; /* Закругленные углы */
+            cursor: pointer; /* Указатель при наведении */
+            margin-left: 40px; /* Отступ слева от фото */
+            margin-top: 10px;
+            height: 20px;
+            width: 170px;
+        }
+
+        .upload-btn:hover {
+            background-color: #45a049; /* Цвет при наведении */
+        }
+
+        textarea {
+            width: 640px; /* Ширина текстового поля */
+            height: 120px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none; /* Запрещаем изменение размера текстового поля */
+        }
+
+        select {
+            margin-top: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .achievements {
+            margin-top: 20px; 
+        }
+
+        .achievement-input {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-links img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        .save-bio-btn {
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 5px 15px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            margin-top: 10px; 
+            height: 35px; 
+            width: 130px; 
+            font-size: 12px; 
+        }
+
+        .save-bio-btn:hover {
+            background-color: #45a049; 
+        }
+
+        #interestsInput {
+            width: 100%; 
+            height: 40px; 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            resize: none; 
+        }
+
+        .add-interest-btn, .save-interests-btn {
+ background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            padding: 10px 15px; 
+            text-align: center; 
+            text-decoration: none; 
+            display: inline-block; 
+            font-size: 12px; 
+            margin: 5px 2px; 
+            cursor: pointer; 
+            border-radius: 5px; 
+            transition: background-color 0.3s; 
+        }
+
+        .add-interest-btn:hover, .save-interests-btn:hover {
+            background-color: #45a049; 
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .profile-pic {
+                width: 170px; 
+                height: 170px;
+            }
+        }    
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="logo-container">
+        <a href="main.html"><img src="img/logo.jpg" alt="Логотип" id="logo" style="width: 50px; height: 50px;"></a>
+        <a class="YouKnow" href="main.html"><span>YouKnow</span></a>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Активности</button>
+                    <div class="dropdown-content">
+                        <a href="Library.html">Библиотека</a>
+                        <a href="Forum.html">Обсуждения</a>
+                        <a href="Courses.html">Курсы</a>
+                        <a href="Video.html">Видеоуроки</a>
+                    </div>
+                </div>
+            </li>
+            <li class="search-container">
+                <input type="text" placeholder="Поиск по сайту">
+                <button class="search-btn">🔍</button>
+            </li>
+            <li class="hamburger-menu">
+                <button class="hamburger-btn">☰</button>
+                <div class="dropdown-content">
+                    <a href="profile.html">Профиль</a>
+                    <a href="#" class="settings-btn">Настройки</a>
+                    <a href="#" class="contactUS-btn">Обратная связь</a>
+                    <a href="Questions.html" class="contactUS-btn">FAQ</a>
+                </div>
+            </li>
+            <li><a href="#" class="login-btn">Вход</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Ваш профиль</h2>
+    <div id="profile" style="position: relative;">
+        <label for="fileInput">
+            <img src="img/DefaultPFP.png" alt="Фото профиля отсутствует" class="profile-pic" id="profileImage"> 
+        </label>
+        <div class="profile-info">
+            <p><strong>Имя пользователя:</strong> <span id="profileUsername"></span></p>
+            <p><strong>Электронная почта:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Биография:</strong></p>
+            <textarea id="bioInput" placeholder="Напишите что-то о себе..." maxlength="3000"></textarea>
+            <button class="save-bio-btn">Сохранить</button>
+            <p><strong>Интересы:</strong></p>
+            <textarea id="interestsInput" placeholder="Введите ваши интересы (по одному на строку)..." rows="2" maxlength="500"></textarea>
+            <div>
+                <button class="add-interest-btn">Добавить интерес</button>
+                <button class="save-interests-btn">Сохранить интересы</button>
+            </div>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" onchange="loadImage(event)" style="display:none;">     
+        <p style="position: absolute; top: 15px; right: 15px;">
+            <strong>Статус:</strong>
+            <select id="statusSelector" style="margin-left: 5px;">
+                <option value="online">В сети</option>
+                <option value="busy">Занят</option>
+                <option value="away">Отошел</option>
+            </select>
+        </p>
+    </div>
+</div>
+<div id="login-modal" class="modal" style="color: black;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Вход</h2>
+            <form>
+                <label for="username">Логин:</label>
+                <input type="text" id="username" name="username" required><br />
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required><br /><br />
+                <a class="registerbutton" href="RegistrationForm.html">Создать аккаунт</a><br /><br />
+                <button type="submit" class="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+    <div id="login-modal2" class="modal" style="color: black;">
+        <div class="modal-content">
+            <span class="close-btn2">&times;</span>
+            <h2>Обратная связь</h2>
+            <form>
+                <label for="name">Введите ваше имя:</label>
+                <input type="text" id="username" name="username"><br /> 
+                <label for="email">Введите ваш email:</label>
+                <input type="email" id="email" name="email" required><br /> 
+                <label for="message">Опишите проблему:</label><br /> 
+                <textarea></textarea><br />
+                <button type="submit" class="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+    <div id="login-modal3" class="modal" style="color: black;">
+        <div class="modal-content">
+            <span class="close-btn3">&times;</span>
+            <h2>Настройки</h2>
+            <form>
+                <label for="name">Выберите тему</label>
+                <a href="#">
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </a>
+            </form>
+            <form>
+                <a href="#">
+                    <label class="switch">
+                        <input type="radio" id="">
+                        <span class=""></span>
+                    </label>
+                </a>
+            </form>
+        </div>
+    </div>
+
+
+<footer>
+    <div class="social-links">
+        <a href="https:// telegram.org/" target="_blank">
+            <img class="Telegram" src="img/telegram.png" alt="Telegram">
+        </a>
+        <a href="https://github.com/Cooljssj-ty" target="_blank">
+            <img class="Github" src="img/github.png" alt="Github">
+        </a>
+    </div>
+    <p>Контактная информация</p>
+    <p>Социальные сети</p>
+    <li style="list-style: none;"><a href="AboutUS.html">О нас</a></li>
+</footer>
+
+<script src="buttonscript.js"></script>
+<script>
+    let interests = [];
+
+    function loadImage(event) {
+        const image = document.getElementById('profileImage');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    }
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+
+    window.onload = function() {
+        const userId = getCookie('userId');
+
+        if (!userId) {
+            alert('Вы не авторизованы!');
+            return;
+        }
+
+        fetch(`/api/user/${userId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const user = data.user;
+                    document.getElementById('profileUsername').textContent = user.usname;
+                    document.getElementById('profileEmail').textContent = user.email;
+
+                    // Отобразить интересы пользователя
+                    if (user.interests && user.interests.length > 0) {
+                        interests = user.interests;
+                        document.getElementById('interestsInput').value = interests.join('\n');
+                    }
+                } else {
+                    alert('Не удалось получить данные пользователя');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка при загрузке данных профиля:', error);
+                alert('Ошибка при загрузке данных профиля');
+            });
+    };
+
+    document.querySelector('.add-interest-btn').addEventListener('click', function() {
+        const interestsInput = document.getElementById('interestsInput');
+        const newInterest = interestsInput.value.trim();
+
+        if (newInterest) {
+            interests.push(newInterest);
+            interestsInput.value = ''; // Очистить поле ввода
+            alert(`Интерес "${newInterest}" добавлен!`);
+        } else {
+            alert('Введите интерес перед добавлением.');
+        }
+    });
+
+    document.querySelector('.save-interests-btn').addEventListener('click', function() {
+        const userId = getCookie('userId');
+
+        fetch(`/api/user/${userId}/interests`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ interests: interests })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Интересы сохранены!');
+            } else {
+                alert('Не удалось сохранить интересы.');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при сохранении интересов:', error);
+            alert('Ошибка при сохранении интересов');
+        });
+    });
+</script>
+</body>
+</html>

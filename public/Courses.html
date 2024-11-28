@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="css/Header.css">
+    <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/buttonStyle.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/stylesCourses.css">
+    <link rel="icon" href="Github-Octicons-Id-badge-16.512.png" type="image/png">
+</head>
+<header class="header">
+    <div class="logo-container">
+        <a href="main.html">
+            <img src="img/logo.jpg" alt="Логотип" class="logo">
+        </a>
+        <a class="YouKnow" href="main.html">
+            <span>YouKnow</span>
+        </a>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="Forum.html">Форум</a></li>
+            <li class="search-container">
+                <input type="text" placeholder="Поиск по сайту">
+                <button class="search-btn">🔍</button>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn">Активности</button>
+                <div class="dropdown-content">
+                    <a href="library/Library.html">Библиотека</a>
+                    <a href="Questions.html">Ответы на вопросы</a>
+                    <a href="Courses.html">Курсы</a>
+                    <a href="Video.html">Видеоуроки</a>
+                </div>
+            </li>
+            <li class="hamburger-menu">
+                <button class="hamburger-btn">☰</button>
+                <div class="dropdown-content">
+                    <a href="#">Профиль</a>
+                    <a href="#" class="settings-btn">Настройки</a>
+                    <a href="#" class="contactUS-btn">Обратная связь</a>
+                </div>
+            </li>
+            <li><a href="#" class="login-btn">Вход</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+<title>
+   Курсы Онлайн
+  </title>
+  <div class="container">
+   <div class="course">
+    <img alt="Изображение курса по программированию с компьютером и кодом на экране" height="400" src="img/1.jpg" width="600"/>
+    <div class="course-content">
+     <h2>
+      Курс по программированию
+     </h2>
+     <p>
+      Научитесь программировать с нуля. Этот курс охватывает основы программирования и поможет вам начать карьеру в IT.
+     </p>
+     <p class="duration">
+      Длительность: 3 месяца
+     </p>
+     <a class="select-course" href="#">
+      Выбрать курс
+     </a>
+    </div>
+   </div>
+   <div class="course">
+    <img alt="Изображение курса по дизайну с примерами графического дизайна на экране" height="400" src="img/2.jpg" width="600"/>
+    <div class="course-content">
+     <h2>
+      Курс по дизайну
+     </h2>
+     <p>
+      Изучите основы графического дизайна и научитесь создавать потрясающие визуальные эффекты для веб и печати.
+     </p>
+     <p class="duration">
+      Длительность: 2 месяца
+     </p>
+     <a class="select-course" href="#">
+      Выбрать курс
+     </a>
+    </div>
+   </div>
+   <div class="course">
+    <img alt="Изображение курса по маркетингу с графиками и диаграммами на экране" height="400" src="img/3.jpg" width="600"/>
+    <div class="course-content">
+     <h2>
+      Курс по маркетингу
+     </h2>
+     <p>
+      Узнайте, как эффективно продвигать продукты и услуги, используя современные маркетинговые стратегии и инструменты.
+     </p>
+     <p class="duration">
+      Длительность: 1.5 месяца
+     </p>
+     <a class="select-course" href="#">
+      Выбрать курс
+     </a>
+    </div>
+   </div>
+   <div class="course">
+    <img alt="Изображение курса по фотографии с камерой и примерами фотографий" height="400" src="img/4.jpg" width="600"/>
+    <div class="course-content">
+     <h2>
+      Курс по фотографии
+     </h2>
+     <p>
+      Овладейте искусством фотографии и научитесь делать профессиональные снимки с помощью нашего курса.
+     </p>
+     <p class="duration">
+      Длительность: 2.5 месяца
+     </p>
+     <a class="select-course" href="#">
+      Выбрать курс
+     </a>
+    </div>
+   </div>
+  </div>
+
+</body>
+<footer>
+    <div class="social-links">
+        <a href="https://telegram.org/" target="_blank">
+            <img class="Telegram" src="img/telegram.png" alt="Telegram">
+        </a>
+        <a href="https://github.com/Cooljssj-ty" target="_blank">
+            <img class="Github" src="img/github.png" alt="Github">
+        </a>
+    </div>
+    <p>Контактная информация</p>
+    <p>Социальные сети</п>
+</footer>
+<script src="scripts.js"></script>
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Вход</h2>
+        <form>
+            <label for="username">Логин:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="submit">Войти</button>
+        </form>
+    </div>
+</div>
+<div id="login-modal2" class="modal" style="color: black;">
+    <div class="modal-content">
+        <span class="close-btn2">&times;</span>
+        <h2>Обратная связь</h2>
+        <form>
+            <label for="name">Введите ваше имя:</label>
+            <input type="text" id="username" name="username">
+            <label for="email">Введите ваш email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Опишите проблему</label>
+            <input type="text" id="message" name="message" required>
+            <button type="submit" class="submit">Войти</button>
+        </form>
+    </div>
+</div>
+<div id="login-modal3" class="modal" style="color: black;">
+    <div class="modal-content">
+        <span class="close-btn3">&times;</span>
+        <h2>Настройки</h2>
+        <form>
+            <label for="name">Выберите тему</label>
+            <a href="#">
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+            </a>
+        </form>
+    </div>
+</div>
+<script src="buttonscript.js"></script>
+
+</html>
