@@ -3,6 +3,7 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .container {
@@ -30,11 +31,10 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
+    width: 380px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; 
 }
 
 button {
@@ -52,42 +52,7 @@ button:hover {
     background-color: #4cae4c;
 }
 
-
-@media (max-width: 768px) {
-    .container {
-        width: 90%; 
-        padding: 15px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-        width: 100%; 
-    }
-
-    button {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        width: 90%; 
-        padding: 10px;
-    }
-
-    h2 {
-        font-size: 1.5rem; 
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-        width: 100%; 
-        padding: 12px; 
-    }
-
-    button {
-        font-size: 14px; 
-    }
+.escape{
+    text-decoration: none;
+    color: #4cae4c;
 }
