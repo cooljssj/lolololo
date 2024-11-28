@@ -328,36 +328,30 @@
         return null;
     }
 
-    window.onload = function() {
-        const userId = getCookie('userId');
+ window.onload = function() {
+    const userId = getCookie('userId');
 
-        if (!userId) {
-            alert('Вы не авторизованы!');
-            return;
-        }
+    if (!userId) {
+        alert('Вы не авторизованы! Пожалуйста, зарегистрируйтесь или войдите в систему.');
+        window.location.href = 'RegistrationForm.html'; // Перенаправление на страницу регистрации
+        return;
+    }
 
-        fetch(`/api/user/${userId}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    const user = data.user;
-                    document.getElementById('profileUsername').textContent = user.usname;
-                    document.getElementById('profileEmail').textContent = user.email;
-
-                    // Отобразить интересы пользователя
-                    if (user.interests && user.interests.length > 0) {
-                        interests = user.interests;
-                        document.getElementById('interestsInput').value = interests.join('\n');
-                    }
-                } else {
-                    alert('Не удалось получить данные пользователя');
-                }
-            })
-            .catch(error => {
-                console.error('Ошибка при загрузке данных профиля:', error);
-                alert('Ошибка при загрузке данных профиля');
-            });
-    };
+ fetch(`/api/user/${userId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const user = data.user;
+                document.getElementById('profileUsername').textContent = user.usname; // Имя пользователя
+                document.getElementById('profileEmail').textContent = user.email; // Электронная почта
+            } else {
+                alert('Не удалось получить данные пользователя');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при загрузке данных профиля:', error);
+            alert('Ошибка при загрузке данных профиля');
+        });
 
     document.querySelector('.add-interest-btn').addEventListener('click', function() {
         const interestsInput = document.getElementById('interestsInput');

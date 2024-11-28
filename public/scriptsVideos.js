@@ -1,5 +1,6 @@
  document.getElementById('upload-button').addEventListener('click', async (event) => {
         event.preventDefault();
+ console.log('Кнопка "Загрузить" нажата');
 
         const videoname = document.getElementById('videoname').value;
         const description = document.getElementById('description').value;

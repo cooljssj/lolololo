@@ -9,6 +9,9 @@ const bcrypt = require('bcrypt');
 const app = express();
 const port = 3000;
 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'main.html')); 
 });
@@ -75,10 +78,15 @@ app.post('/api/register', async (req, res) => {
         const saltRounds = 10;
         const passwordHash = await bcrypt.hash(password, saltRounds);
         const query = ` 
-            INSERT INTO public.users (usname, firstname, email, password_hash) 
-            VALUES ($1, $2, $3, $4) 
+             INSERT INTO public.users (usname, firstname, email, password_hash)
+            VALUES ($1, $2, $3, $4) RETURNING userid
         `;
-        await pool.query(query, [usname, firstname, email, passwordHash]); 
+
+         const result = await pool.query(query, [usname, firstname, email, passwordHash]); 
+        const userId = result.rows[0].userid;
+
+res.cookie('userId', userId, { httpOnly: true, maxAge: 3600000 }); // Кука на 1 час
+
         res.status(201).json({ success: true, message: 'Пользователь успешно зарегистрирован' }); 
     } catch (error) { 
         console.error(error); 
@@ -147,6 +155,27 @@ app.get('/api/users', async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ success: false, message: 'Ошибка получения пользователей' });
+    }
+});
+
+app.get('/api/user/:id', async (req, res) => {
+    const { id } = req.params; // Get the user ID from the URL
+
+    try {
+        const result = await pool.query('SELECT * FROM public.users WHERE userid = $1', [id]);
+        
+        if (result.rows.length === 0) {
+            return res.status(404).json({ success: false, message: 'Пользователь не найден' });
+        }
+
+        // Return user details
+        res.status(200).json({
+            success: true,
+            user: result.rows[0]
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: 'Ошибка получения пользователя' });
     }
 });
 

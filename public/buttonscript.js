@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     const dropdown = document.querySelector('.dropdown');
     const registerForm = document.getElementById('registerForm');
-    const loginForm = document.querySelector('#login-form');
+    const loginForm = document.getElementById('login-form');
     const dropbtn = document.querySelector('.dropbtn');
     const dropdownContent = document.querySelector('.dropdown-content');
 
@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById("logo").src = "img/logo.png";
         }
     });
-
 
     loginBtn.addEventListener('click', () => {
         modal.style.display = 'block';
@@ -81,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Register Form Submission
     registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const usname = document.getElementById('reg-username').value;
@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Login Form Submission
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = document.getElementById('username').value;
@@ -124,14 +125,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const data = await response.json();
+
             if (data.success) {
                 showNotification('Вход успешен!', 'success');
                 modal.style.display = 'none';
                 localStorage.setItem('authToken', data.token);
+
+                // Remove login button after successful login
+                loginBtn.style.display = 'none';
             } else {
                 showNotification(data.message || 'Ошибка входа.', 'error');
             }
         } catch (error) {
+            console.error('Ошибка подключения: ', error);
             showNotification('Ошибка сервера. Попробуйте позже.', 'error');
         }
     });
