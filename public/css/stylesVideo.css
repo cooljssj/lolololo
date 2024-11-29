@@ -9,6 +9,14 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
+    background-color: #e0f7e0;;
+    border-radius: 5px;
+}
+
+.dark-mode .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
     background-color: #111;
     border-radius: 5px;
 }
