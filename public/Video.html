@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="css/stylesVideo.css">
     <link rel="icon" href="Github-Octicons-Id-badge-16.512.png" type="image/png">
 </head>
- <header class="header">
+
+<body>
+    <header class="header">
         <div class="logo-container">
             <a href="main.html"><img src="img/logo.png" alt="Логотип" id="logo" style="width: 50px; height: 50px;"></a>
             <a class="YouKnow" href="main.html"><span>YouKnow</span></a>
@@ -48,171 +50,110 @@
         </nav>
     </header>
 
-<body>
-     <div class="container">
+    <div class="container">
         <div class="video-upload">
-    <h2>Загрузить видео курса</h2>
-    <input id="videoname" name="videoname" placeholder="Название курса" type="text" />
-    <textarea id="description" name="description" placeholder="Описание курса"></textarea>
-    <input id="url" name="url" placeholder="URL видео" type="text" />
-    <button id="upload-button">Загрузить</button>
+            <h2>Загрузить видео курса</h2>
+            <input id="videoname" name="videoname" placeholder="Название курса" type="text" />
+            <textarea id="description" name="description" placeholder="Описание курса"></textarea>
+            <input id="url" name="url" placeholder="URL видео" type="text" />
+            <button id="upload-button" onclick="addVideo()">Загрузить</button>
         </div>
- <div class="video-list">
-    <div class="video-item">
-        <div class="video-wrapper">
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/KdZ4HF1SrFs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-            <h3>Введение в Python</h3>
-            <p>Вмдеоурок по Пайтону для начинающих.</p>
-            <div class="video-actions">
-                <button><i class="fas fa-thumbs-up"></i> Нравится</button>
-                <button><i class="fas fa-comment"></i> Комментарий</button>
+        <div class="video-list" id="video-list">
+            <div class="video-item" id="video-template">
+                <div class="video-wrapper">
+                    <iframe width="400" height="225" src="https://www.youtube.com/embed/KdZ4HF1SrFs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Введение в Python</h3>
+                    <p>Видеоурок по Пайтону для начинающих.</p>
+                    <div class="video-actions">
+                        <button><i class="fas fa-thumbs-up"></i> Нравится</button>
+                        <button><i class="fas fa-comment"></i> Комментарий</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="video-item">
-        <div class="video-wrapper">
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/48Ubb-36nsQ?si=0g-gGyUfw-ghNaxY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-            <h3>Открыть компанию в Эстонии</h3>
-            <p>Дельные советы для тех, кому это нужно </p>
-            <div class="video-actions">
-                <button><i class="fas fa-thumbs-up"></i> Нравится</button>
-                <button><i class="fas fa-comment"></i> Комментарий</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="video-item">
-        <div class="video-wrapper">
-            <iframe width="400" height="225" src="https://www.youtube.com/embed/jzfNTXOyKJQ?si=SUaWnWiOg6gW0lXd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-            <h3>Следуйте этим правилам чтобы достичь успеха</h3>
-            <p>90% не смогли.</p>
-            <div class="video-actions">
-                <button><i class="fas fa-thumbs-up"></i> Нравится</button>
-                <button><i class="fas fa-comment"></i> Комментарий</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-</body>
-<footer>
-    <div class="social-links">
-        <a href="https://telegram.org/" target="_blank">
-            <img id="Telegram" src="img/telegram.png" alt="Telegram">
-        </a>
-        <a href="https://github.com/Cooljssj-ty" target="_blank">
-            <img id="Github" src="img/github.png" alt="Github">
-        </a>
-    </div>
-    <p>Контактная информация</p>
-    <p>Социальные сети</p>
-    <li style="list-style: none;"><a href="AboutUS.html" class="AboutUS">О нас</a></li>
-</footer>
-<script src="scripts.js"></script>
-<div id="login-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Вход</h2>
-        <form>
-            <label for="username">Логин:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit" class="submit">Войти</button>
-        </form>
-    </div>
-</div>
-<div id="login-modal2" class="modal" style="color: black;">
-    <div class="modal-content">
-        <span class="close-btn2">&times;</span>
-        <h2>Обратная связть</h2>
-        <form>
-            <label for="name">Введите ваше имя:</label>
-            <input type="text" id="username" name="username">
-            <label for="email">Введите ваш email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Опишите проблему</label>
-            <input type="text" id="message" name="message" required>
-            <a class="registerbutton" href="RegistrationForm.html">Создать аккаунт</a><br /><br />
-            <button type="submit" class="submit">Войти</button>
-        </form>
-    </div>
-</div>
-<div id="login-modal2" class="modal" style="color: black;">
-    <div class="modal-content">
-        <span class="close-btn2">&times;</span>
-        <h2>Обратная связь</h2>
-        <form>
-            <label for="name">Введите ваше имя:</label>
-            <input type="text" id="username" name="username">
-            <label for="email">Введите ваш email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Опишите проблему</label>
-            <input type="text" id="message" name="message" required>
-            <button type="submit" class="submit">Отправить</button>
-        </form>
-    </div>
-</div>
-<div id="login-modal3" class="modal" style="color: black;">
-    <div class="modal-content">
-        <span class="close-btn3">&times;</span>
-        <h2>Настройки</h2>
-        <form>
-            <label for="name">Выберите тему</label>
-            <a href="#">
-                <label class="switch">
-                    <input type="checkbox" id="dark-mode-toggle">
-                    <span class="slider"></span>
-                </label>
+    <footer>
+        <div class="social-links">
+            <a href="https://telegram.org/" target="_blank">
+                <img id="Telegram" src="img/telegram.png" alt="Telegram">
             </a>
-        </form>
+            <a href="https://github.com/Cooljssj-ty" target="_blank">
+                <img id="Github" src="img/github.png" alt="Github">
+            </a>
+        </div>
+        <p>Контактная информация</p>
+        <p>Социальные сети</p>
+        <li style="list-style: none;"><a href="AboutUS.html" class="AboutUS">О нас</a></li>
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Вход</h2>
+            <form>
+                <label for="username">Логин:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="submit">Войти</button>
+            </form>
+        </div>
     </div>
-</div>
-<script src="buttonscript.js"></script>
-<script src="scriptsVideo.js"></script>
-<script src="scripts.js"></script>
+    
+    <div id="login-modal2" class="modal" style="color: black;">
+        <div class="modal-content">
+            <span class="close-btn2">&times;</span>
+            <h2>Обратная связь</h2>
+            <form>
+                <label for="name">Введите ваше имя:</label>
+                <input type="text" id="username" name="username">
+                <label for="email">Введите ваш email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Опишите проблему</label>
+                <input type="text" id="message" name="message" required>
+                <button type="submit" class="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="login-modal3" class="modal" style="color: black;">
+        <div class="modal-content">
+            <span class="close-btn3">&times;</span>
+            <h2>Настройки</h2>
+            <form>
+                <label for="name">Выберите тему</label>
+                <a href="#">
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </a>
+            </form>
+        </div>
+    </div>
+
     <script>
-function addVideo() {
-            const videoUrl = document.getElementById('videoUrl').value;
-            if (videoUrl) {
-                // Создаем новый элемент видео
-                const videoElement = document.createElement('video');
-                videoElement.src = videoUrl;
-                videoElement.controls = true;
-                videoElement.width = 600;
+        function addVideo() {
+            var videoList = document.getElementById('video-list');
+            var videoTemplate = document.getElementById('video-template').cloneNode(true);
+            videoTemplate.id = ''; // Убираем id клонированного элемента
+            
+            var title = document.getElementById('videoname').value;
+            var description = document.getElementById('description').value;
+            var url = document.getElementById('url').value;
 
-                // Добавляем видео на страницу
-                document.getElementById('videoContainer').appendChild(videoElement);
-
-                // Открываем новое окно с добавленным видео
-                const newWindow = window.open('', '_blank');
-                newWindow.document.write(`
-                    <!DOCTYPE html>
-                    <html lang="ru">
-                    <head>
-                        <meta charset="UTF-8">
-                        <title>Новое Видео</title>
-                    </head>
-                    <body>
-                        <h1>Добавленное Видео</h1>
-                        <video controls width="600">
-                            <source src="${videoUrl}" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                        </video>
-                    </body>
-                    </html>
-                `);
-                newWindow.document.close();
+            if (title && description && url) {
+                videoTemplate.querySelector('.video-info h3').textContent = title;
+                videoTemplate.querySelector('.video-info p').textContent = description;
+                videoTemplate.querySelector('.video-wrapper iframe').src = url;
+                videoList.appendChild(videoTemplate);
             } else {
-                alert('Пожалуйста, введите URL видео.');
+                alert('Пожалуйста, заполните все поля.');
             }
         }
     </script>
+</body>
 </html>
