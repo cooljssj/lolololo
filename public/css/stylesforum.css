@@ -35,7 +35,7 @@ h1.dark-mode, h2.dark-mode, p.dark-mode {
 }
 
 .dark-mode .search-bar button {
-    background-color: #9c27b0;
+    background-color: #66BB6A;
     color: white;
 }
 
@@ -137,6 +137,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+.dark-mode .thread .meta {
+    color: #cdb1b1;
+}
+
 .thread .topic {
     font-size: 0.9em;
     color: #000;
@@ -147,9 +151,15 @@ h2 {
     display: inline-block;
 }
 
+.dark-mode .thread .topic {
+    color: #ffffff;
+    background-color: #66bb6a4b;
+}
+
 .thread p {
     margin-bottom: 10px;
 }
+
 
 .thread button {
     padding: 10px 20px;
@@ -188,7 +198,7 @@ h2 {
 }
 
 .search-bar button:hover {
-    background-color: #4CAF50;
+    background-color: #519655;
 }
 
 .new-thread-button {

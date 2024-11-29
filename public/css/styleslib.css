@@ -24,6 +24,8 @@
     font-size: 2rem;
     color: #333;
     margin-bottom: 1rem;
+
+
 }
 
 .circle-button {
@@ -77,6 +79,13 @@
 }
 
 #file-upload-form{
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.dark-mode #file-upload-form{
     background-color: #111;
     display: flex;
     justify-content: space-evenly;
